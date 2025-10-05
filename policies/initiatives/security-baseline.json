@@ -1,0 +1,12 @@
+{
+  "properties": {
+    "displayName": "Security Baseline (Starter)",
+    "description": "Starter initiative for common Azure security controls. Replace with your curated set.",
+    "policyType": "Custom",
+    "metadata": {
+      "category": "Security"
+    },
+    "parameters": {},
+    "policyDefinitions": []
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus"
+    },
+    "rgName": {
+      "value": "rg-sec-lz-prod"
+    },
+    "workspaceName": {
+      "value": "law-sec-lz-prod"
+    },
+    "lawSku": {
+      "value": "PerGB2018"
+    },
+    "lawRetentionDays": {
+      "value": 90
+    },
+    "enableSentinel": {
+      "value": true
+    },
+    "defenderPlans": {
+      "value": {
+        "VirtualMachines": "Standard",
+        "SqlServers": "Standard",
+        "AppServices": "Standard",
+        "StorageAccounts": "Standard",
+        "SqlServerVirtualMachines": "Standard",
+        "KubernetesService": "Standard",
+        "ContainerRegistry": "Standard",
+        "KeyVaults": "Standard",
+        "Dns": "Standard",
+        "Arm": "Standard",
+        "OpenSourceRelationalDatabases": "Standard",
+        "CosmosDbs": "Standard",
+        "Api": "Standard"
+      }
+    },
+    "policyAssignments": {
+      "value": [
+        {
+          "displayName": "Deny Public IP on NICs",
+          "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/<REPLACE_WITH_BUILTIN_ID>",
+          "parameters": {
+            "effect": {
+              "value": "Deny"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
